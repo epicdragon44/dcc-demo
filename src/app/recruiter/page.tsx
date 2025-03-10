@@ -1,5 +1,6 @@
 import AutoReload from "@/components/auto-reload";
 import ClearAll from "@/components/clear-all";
+import RenderedEval from "@/components/rendered-eval";
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -85,7 +86,9 @@ export default async function RecruiterPage() {
                                         </HoverCardContent>
                                     </HoverCard>
                                 </TableCell>
-                                <TableCell>{entry.eval}</TableCell>
+                                <TableCell>
+                                    <RenderedEval eval={entry.eval} />
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
