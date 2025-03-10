@@ -3,7 +3,7 @@
 import { Ai } from "./ai";
 import { Db } from "./redis";
 
-const NUM_TO_POLL = 20;
+const NUM_TO_POLL = 10;
 
 export default async function runCron() {
     const loadingEntries = await Db.getLoadingEntries(NUM_TO_POLL);
