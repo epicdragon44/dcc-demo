@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { CircleAlertIcon } from "lucide-react";
+import { CircleAlertIcon, Loader2Icon } from "lucide-react";
 
 export default function RenderedEval(props: { eval: string }) {
     if (props.eval === "ACCEPT") {
@@ -10,6 +10,13 @@ export default function RenderedEval(props: { eval: string }) {
         );
     } else if (props.eval === "REJECT") {
         return <Badge variant='destructive'>{props.eval}</Badge>;
+    } else if (props.eval === "LOADING") {
+        return (
+            <span className='flex flex-row items-center gap-2 justify-start text-gray-500'>
+                <Loader2Icon className='w-4 h-4 animate-spin' />
+                Grading
+            </span>
+        );
     } else {
         return (
             <span className='flex flex-row items-center gap-2 justify-start'>
